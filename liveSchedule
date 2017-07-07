@@ -1,0 +1,71 @@
+# https://api.ooyala.com/v2/track_segments?
+# to create schedule with start and end time
+# the track_ID is linked to the track created
+
+# post to /tracks, to create the whole channel (in this case Rocky Mountain)
+# the goal is to create the channel list
+
+{"name": "Rocky Mountain"}
+
+#response
+	
+{
+ "id": "71294ec4e174a7fbb8fd36e48a06c50",
+ "description": null,
+ "image_url": null,
+ "name": "Rocky Mountain"
+}
+
+# post to /virtual_assets
+# the goal is to link the external_id with the program_id (from WideOrbit)
+
+{
+            "name": "Rockies vs Giants",
+ 	        "external_id": "program_id_01"
+}  
+
+
+#response from the endpoint
+
+{
+ "created_at": "2017-07-06T21:34:55Z",
+ "id": "ad63635d5f8246cd8f1aee9f5c9deec2",
+ "name": "Rockies vs Giants",
+ "external_id": "program_id_03",
+ "updated_at": "2017-07-06T21:34:55Z"
+}
+
+# post to /track_segments
+# create start time and end time for a given program
+
+{
+     	"track_id": "71294ec4e174a7fbb8fd36e48a06c50",
+	    	"start_time": "2013-08-13T17:00:00Z",
+	    	"end_time": "2013-08-13T17:30:00Z",
+    	"status": "online",
+    	"external_id": "program_id_03",
+    	"virtual_asset_id": "ad63635d5f8246cd8f1aee9f5c9deec2",
+        "override_stream_asset_id":"FvOG8xOTE6kVtz8hQLCKy_fnhshuvsMG"
+}
+
+# response
+
+{
+ "start_time": "2013-08-13T17:00:00Z",
+ "image_url": null,
+ "virtual_asset_id": "ad63635d5f8246cd8f1aee9f5c9deec2",
+ "description": null,
+ "end_time": "2013-08-13T17:30:00Z",
+ "status": "online",
+ "id": "cdcf7c2327774a6e8199bceb2cdc7b30",
+ "created_at": "2017-07-07T00:02:26Z",
+ "updated_at": "2017-07-07T00:02:26Z",
+ "external_id": "program_id_03",
+ "broadcast_status": null,
+ "name": null,
+ "track_id": "71294ec4e174a7fbb8fd36e48a06c50"
+}
+
+
+
+
